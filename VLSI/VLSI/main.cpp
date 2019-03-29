@@ -1,0 +1,65 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int main() {
+
+	vector<string> parsed;
+	string netlist;
+	bool is_run = true;
+	int option;
+	while (is_run) {
+		cout << "[0] Read the input netlist" << endl;
+		cout << "[1] Perform fault collapsing" << endl;
+		cout << "[2] List fault classes" << endl;
+		cout << "[3] Generate tests (D-Algorithm)" << endl;
+		cout << "[4] Generate tests (boolean satisfiablity)" << endl;
+		cout << "[5] Exit" << endl;
+		cin >> option;
+		switch (option) {
+			case 0: {
+				ifstream myFile;
+				myFile.open("circuit.txt");
+				int comment = 0;
+				if (!myFile) {
+					cout << "Could not open file" << endl;
+				}
+				while (getline(myFile, netlist)) {
+					cout << netlist<<endl;
+					if (netlist[0] != '$' || netlist != " ") {
+						for (int i = 0; i < netlist.length(); i++) {
+							if (netlist[i] == '$') {
+								comment = netlist.length() - i;
+								break;
+							}
+						}
+						//for (int i = 0; i < comment; i++) {
+						//	netlist.pop_back();
+						//}
+						parsed.push_back(netlist);
+					}
+				}
+				myFile.close();
+				for (int i = 0; i < parsed.size(); i++) {
+					cout << parsed[i] << endl;
+				}
+			}
+				break;
+			case 1: cout << "Still missing" << endl;
+				break;
+			case 2: cout << "Still missing" << endl;
+				break;
+			case 3: cout << "Still missing" << endl;
+				break;
+			case 4: cout << "Still missing" << endl;
+				break;
+			case 5: is_run = false;
+				break;
+			default: cout << "Not a valid option" << endl;
+		}
+	}
+	return 0;
+}

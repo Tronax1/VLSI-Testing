@@ -1,0 +1,42 @@
+$Example 4.3 (from book)
+$---------------------------------------------------
+$
+$
+$  total number of lines in the netlist ..............    12
+$        lines from primary input  gates .......     4
+$        lines from primary output gates .......     1
+$        lines from interior gate outputs ......     4
+$        lines from **     1 ** fanout stems ...     3
+$
+$        avg_fanin  =  2.00,     max_fanin  =  2
+$        avg_fanout =  3.00,     max_fanout =  3
+$
+$	x1 = 1gat 
+$	x2 = 2gat
+$	x3 = 3gat
+$   	x4 = 4gat
+$ 	G1 = 5gat
+$	G2 = 6gat
+$	G3 = 7gat
+$	G4 = 8gat
+$	G5 = 9gat
+
+1gat                                    $... primary input
+2gat                                    $... primary input
+3gat                                    $... primary input
+4gat                                    $... primary input
+                                        $... primary input
+$
+$
+
+9gat                                   $... primary output
+                                       $... primary output
+$
+$
+$       Output  Type    Inputs...
+$       ------  ----    ---------
+        5gat   	or    	2gat    3gat
+        6gat   	not     1gat
+        7gat   	and    	1gat    5gat
+        8gat   	and    	6gat   	4gat
+        9gat   	or    	7gat   	8gat
