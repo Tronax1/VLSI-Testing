@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include "parser.h"
 
 using namespace std;
 
@@ -28,24 +29,10 @@ int main() {
 					cout << "Could not open file" << endl;
 				}
 				while (getline(myFile, netlist)) {
-					cout << netlist<<endl;
-					if (netlist[0] != '$' || netlist != " ") {
-						for (int i = 0; i < netlist.length(); i++) {
-							if (netlist[i] == '$') {
-								comment = netlist.length() - i;
-								break;
-							}
-						}
-						//for (int i = 0; i < comment; i++) {
-						//	netlist.pop_back();
-						//}
-						parsed.push_back(netlist);
-					}
+					parser(netlist, parsed);
 				}
 				myFile.close();
-				for (int i = 0; i < parsed.size(); i++) {
-					cout << parsed[i] << endl;
-				}
+				print_parsed(parsed);
 			}
 				break;
 			case 1: cout << "Still missing" << endl;
