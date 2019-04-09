@@ -25,7 +25,6 @@ int main() {
 				ifstream myFile;
 				Parser Parse;
 				myFile.open("circuit.txt");
-				int comment = 0;
 				if (!myFile) {
 					cout << "Could not open file" << endl;
 				}
