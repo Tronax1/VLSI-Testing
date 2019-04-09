@@ -23,16 +23,17 @@ int main() {
 		switch (option) {
 			case 0: {
 				ifstream myFile;
+				Parser Parse;
 				myFile.open("circuit.txt");
 				int comment = 0;
 				if (!myFile) {
 					cout << "Could not open file" << endl;
 				}
 				while (getline(myFile, netlist)) {
-					parser(netlist, parsed);
+					Parse.parser(netlist, parsed);
 				}
 				myFile.close();
-				print_parsed(parsed);
+				Parse.print_parsed(parsed);
 			}
 				break;
 			case 1: cout << "Still missing" << endl;
