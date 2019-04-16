@@ -32,6 +32,7 @@ int main() {
 					Parse.parser(netlist, parsed);
 				}
 				myFile.close();
+				Parse.create_gates(parsed);
 				Parse.print_parsed(parsed);
 			}
 				break;

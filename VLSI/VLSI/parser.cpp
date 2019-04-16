@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <algorithm>
 
 
 Parser::Parser() {
@@ -17,6 +18,21 @@ bool Parser::is_output(std::string input) {
 	if (input.find("output") != std::string::npos)
 		return true;
 	return false;
+}
+void Parser::create_gates(std::vector<std::string> result) {
+	std::cout << "Beginning of test" << std::endl;
+	std::string temp;
+	for (int i = 0; i < result.size(); i++) {
+		temp = result[i];
+		temp.erase(remove(temp.begin(), temp.end(), ' '), temp.end());
+		std::cout << temp << std::endl;
+		if (temp.size() > 4) {
+			GATE gate;
+			gate.output = temp.substr(0, 4);
+			gate.type = temp.substr(5,3);
+			gates.push_back(gate);
+		}
+	}
 }
 void Parser::parser(std::string input, std::vector<std::string> &result) {
 	std::string parsed_netlist;
@@ -48,5 +64,9 @@ void Parser::print_parsed(std::vector<std::string> result) {
 	std::cout << "The primary output is:" << std::endl;
 	for (int i = 0; i < output.size(); i++) {
 		std::cout << output[i] << std::endl;
+	}
+	std::cout << "The gates are the following: " << std::endl;
+	for (int i = 0; i < gates.size(); i++) {
+		std::cout << gates[i].output<<" "<<gates[i].type << std:: endl;
 	}
 }
