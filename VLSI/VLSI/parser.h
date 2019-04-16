@@ -24,6 +24,7 @@ public:
 	Parser();
 	bool is_input(std::string input);
 	bool is_output(std::string input);
+	void fine_tune(GATE &gate, std::string gate_information);
 	void create_gates(std::vector<std::string> result);
 	void parser(std::string input, std::vector<std::string> &result);
 	void print_parsed(std::vector<std::string> result);
