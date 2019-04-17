@@ -35,8 +35,8 @@ $
 $
 $       Output  Type    Inputs...
 $       ------  ----    ---------
-        5gat   	or    	2gat    3gat
-        6gat   	not     1gat
-        7gat   	and    	1gat    5gat
+        5gat   	or    	2gat	3gat
+        6gat   	not		1gat
+        7gat   	and    	1gat	5gat
         8gat   	and    	6gat   	4gat
-        9gat   	or    	7gat   	8gat
+        9gat   	or    	7gat	8gat
