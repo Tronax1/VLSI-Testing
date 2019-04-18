@@ -10,7 +10,7 @@ int main() {
 
 	vector<string> parsed;
 	string netlist;
-	bool is_run = true;
+	bool is_run = true, file_read = false;
 	int option;
 	while (is_run) {
 		cout << "[0] Read the input netlist" << endl;
@@ -28,21 +28,38 @@ int main() {
 				if (!myFile) {
 					cout << "Could not open file" << endl;
 				}
+				
 				while (getline(myFile, netlist)) {
 					Parse.parser(netlist, parsed);
 				}
 				myFile.close();
 				Parse.create_gates(parsed);
-				Parse.print_parsed(parsed);
+				//Parse.print_parsed(parsed);
+				cout << "---------------------------------------" << endl;
+				cout << "File read successfully" << endl;
+				cout << "---------------------------------------" << endl<<endl;
+				file_read = true;
 			}
 				break;
-			case 1: cout << "Still missing" << endl;
+			case 1: {
+				if (!file_read)
+					cout << "You have not read in the netlist" << endl<<endl;
+			}
 				break;
-			case 2: cout << "Still missing" << endl;
+			case 2: {
+				if (!file_read)
+					cout << "You have not read in the netlist" << endl << endl;
+			}
 				break;
-			case 3: cout << "Still missing" << endl;
+			case 3: {
+				if (!file_read)
+					cout << "You have not read in the netlist" << endl << endl;
+			}
 				break;
-			case 4: cout << "Still missing" << endl;
+			case 4: {
+				if (!file_read)
+					cout << "You have not read in the netlist" << endl << endl;
+			}
 				break;
 			case 5: is_run = false;
 				break;

@@ -3,11 +3,12 @@
 #include <vector>
 #include <iostream>
 #include <algorithm>
+#include <iomanip>
 
 
 Parser::Parser() {
-	inputs.push_back("Input");
-	output.push_back("Output");
+	inputs.push_back("Primary inputs");
+	output.push_back("Primary output");
 }
 bool Parser::is_input(std::string input) {
 	if (input.find("input") != std::string::npos)
@@ -20,7 +21,6 @@ bool Parser::is_output(std::string input) {
 	return false;
 }
 void Parser::create_gates(std::vector<std::string> result) {
-	std::cout << "Beginning of test" << std::endl;
 	std::string temp;
 	for (int i = 0; i < result.size(); i++) {
 		temp = result[i];
@@ -92,19 +92,22 @@ void Parser::parser(std::string input, std::vector<std::string> &result) {
 	}
 }
 void Parser::print_parsed(std::vector<std::string> result) {
-	for (int i = 0; i < result.size(); i++) {
-		std::cout << result[i] << std::endl;
-	}
-	std::cout << "The primary inputs are:" << std::endl;
 	for (int i = 0; i < inputs.size(); i++) {
 		std::cout << inputs[i] << std::endl;
 	}
-	std::cout << "The primary output is:" << std::endl;
 	for (int i = 0; i < output.size(); i++) {
 		std::cout << output[i] << std::endl;
 	}
 	std::cout << "The gates are the following: " << std::endl;
+	std::cout << "Gate inputs";
+	std::cout << std::setw(10);
+	std::cout << "Type";
+	std::cout << std::setw(20);
+	std::cout << "Gate output"<<std::endl;
+
+
 	for (int i = 0; i < gates.size(); i++) {
-		std::cout << gates[i].output<<" output "<<gates[i].type <<" type "<<gates[i].inputs[0]<<" input1 "<<gates[i].inputs[1]<<" Input2"<< std:: endl;
+		std::cout << gates[i].inputs[0]<<std::setw(5)<<gates[i].inputs[1]<< std::setw(10) <<gates[i].type<< std::setw(20) <<gates[i].output<< std:: endl;
 	}
+	std::cout << std::endl;
 }
