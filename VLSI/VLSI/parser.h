@@ -12,6 +12,8 @@ struct GATE {
 	std::string inputs[2];
 	std::string output;
 	std::string type;
+	std::string single_stuck_at_0 = "X";
+	std::string single_stuck_at_1 = "X";
 };
 class Parser {
 

@@ -44,8 +44,11 @@ int main() {
 			case 1: {
 				if (!file_read)
 					cout << "You have not read in the netlist" << endl<<endl;
-				Parse.generate_fault_classes();
-				Parse.print_fault_classes();
+				else {
+					Parse.generate_fault_classes();
+					Parse.print_fault_classes();
+				}
+				
 			}
 				break;
 			case 2: {

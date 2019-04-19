@@ -127,8 +127,8 @@ void Parser::generate_fault_classes() {
 	for (int i = 1; i < gates.size(); i++) {
 		if (!is_wire_present(gates[i].inputs[0], fault_universe)) {
 			temp.push_back(gates[i].inputs[0]);
-			temp.push_back("X");
-			temp.push_back("X");
+			temp.push_back(gates[i].single_stuck_at_0);
+			temp.push_back(gates[i].single_stuck_at_1);
 			fault_universe.push_back(temp);
 			temp.clear();
 		}
@@ -136,8 +136,8 @@ void Parser::generate_fault_classes() {
 	for (int i = 0; i < gates.size(); i++) {
 		if (!is_wire_present(gates[i].inputs[1], fault_universe)) {
 			temp.push_back(gates[i].inputs[1]);
-			temp.push_back("X");
-			temp.push_back("X");
+			temp.push_back(gates[i].single_stuck_at_0);
+			temp.push_back(gates[i].single_stuck_at_1);
 			fault_universe.push_back(temp);
 			temp.clear();
 		}
@@ -145,8 +145,8 @@ void Parser::generate_fault_classes() {
 	for (int i = 0; i < gates.size(); i++) {
 		if (!is_wire_present(gates[i].output, fault_universe)) {
 			temp.push_back(gates[i].output);
-			temp.push_back("X");
-			temp.push_back("X");
+			temp.push_back(gates[i].single_stuck_at_0);
+			temp.push_back(gates[i].single_stuck_at_1);
 			fault_universe.push_back(temp);
 			temp.clear();
 		}
