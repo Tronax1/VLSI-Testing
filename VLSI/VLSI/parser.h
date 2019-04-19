@@ -19,15 +19,19 @@ private:
 	std::vector<std::string> inputs;
 	std::vector<std::string> output;
 	std::vector<GATE> gates;
+	std::vector<std::vector<std::string>> fault_universe;
 
 public:
 	Parser();
 	bool is_input(std::string input);
 	bool is_output(std::string input);
+	bool is_wire_present(std::string wire, std::vector<std::vector<std::string>> fault_universe);
 	void fine_tune(GATE &gate, std::string gate_information);
 	void create_gates(std::vector<std::string> result);
 	void parser(std::string input, std::vector<std::string> &result);
 	void print_parsed(std::vector<std::string> result);
+	void generate_fault_classes();
+	void print_fault_classes();
 };
 
 

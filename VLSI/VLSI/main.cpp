@@ -10,12 +10,13 @@ int main() {
 
 	vector<string> parsed;
 	string netlist;
+	Parser Parse;
 	bool is_run = true, file_read = false;
 	int option;
 	while (is_run) {
 		cout << "[0] Read the input netlist" << endl;
-		cout << "[1] Perform fault collapsing" << endl;
-		cout << "[2] List fault classes" << endl;
+		cout << "[1] List fault classes" << endl;
+		cout << "[2] Perform fault collapsing" << endl;
 		cout << "[3] Generate tests (D-Algorithm)" << endl;
 		cout << "[4] Generate tests (boolean satisfiablity)" << endl;
 		cout << "[5] Exit" << endl;
@@ -23,7 +24,6 @@ int main() {
 		switch (option) {
 			case 0: {
 				ifstream myFile;
-				Parser Parse;
 				myFile.open("circuit.txt");
 				if (!myFile) {
 					cout << "Could not open file" << endl;
@@ -44,6 +44,8 @@ int main() {
 			case 1: {
 				if (!file_read)
 					cout << "You have not read in the netlist" << endl<<endl;
+				Parse.generate_fault_classes();
+				Parse.print_fault_classes();
 			}
 				break;
 			case 2: {
