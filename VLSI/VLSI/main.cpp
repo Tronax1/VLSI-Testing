@@ -25,13 +25,9 @@ int main() {
 			case 0: {
 				ifstream myFile;
 				myFile.open("circuit.txt");
-				if (!myFile) {
-					cout << "Could not open file" << endl;
-				}
+				if (!myFile) { cout << "Could not open file" << endl; }
 				
-				while (getline(myFile, netlist)) {
-					Parse.parser(netlist, parsed);
-				}
+				while (getline(myFile, netlist)) { Parse.parser(netlist, parsed); }
 				myFile.close();
 				Parse.create_gates(parsed);
 				//Parse.print_parsed(parsed);
@@ -42,28 +38,29 @@ int main() {
 			}
 				break;
 			case 1: {
-				if (!file_read)
-					cout << "You have not read in the netlist" << endl<<endl;
+				if (!file_read) { cout << "You have not read in the netlist" << endl << endl; }
 				else {
 					Parse.generate_fault_classes();
 					Parse.print_fault_classes();
 				}
-				
 			}
 				break;
 			case 2: {
-				if (!file_read)
-					cout << "You have not read in the netlist" << endl << endl;
+				if (!file_read) { cout << "You have not read in the netlist" << endl << endl; }
+				else {
+					Parse.fault_collapsing();
+					cout << "---------------------------------------" << endl;
+					cout << "Fault collapsing perfomed successfully" << endl<<endl<<"Press 1 to view updated classes\n";
+					cout << "---------------------------------------" << endl << endl;
+				}
 			}
 				break;
 			case 3: {
-				if (!file_read)
-					cout << "You have not read in the netlist" << endl << endl;
+				if (!file_read) { cout << "You have not read in the netlist" << endl << endl; }
 			}
 				break;
 			case 4: {
-				if (!file_read)
-					cout << "You have not read in the netlist" << endl << endl;
+				if (!file_read) { cout << "You have not read in the netlist" << endl << endl; }
 			}
 				break;
 			case 5: is_run = false;

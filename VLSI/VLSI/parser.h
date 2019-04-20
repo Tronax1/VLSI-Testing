@@ -33,9 +33,7 @@ public:
 	void parser(std::string input, std::vector<std::string> &result);
 	void print_parsed(std::vector<std::string> result);
 	void generate_fault_classes();
+	void fault_collapsing();
 	void print_fault_classes();
 };
-
-
-
 #endif
