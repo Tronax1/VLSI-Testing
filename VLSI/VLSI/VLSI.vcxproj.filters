@@ -29,9 +29,24 @@
     <None Include="..\..\..\..\..\Downloads\benchmarks\benchmarks\t4_3.ckt">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="..\..\..\..\..\Downloads\benchmarks\benchmarks\t4_21.ckt">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Downloads\benchmarks\benchmarks\t5_10.ckt">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Downloads\benchmarks\benchmarks\t5_26a.ckt">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Downloads\benchmarks\benchmarks\t6_24.ckt">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Text Include="circuit.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Other.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>

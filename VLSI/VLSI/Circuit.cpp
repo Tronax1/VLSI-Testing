@@ -119,3 +119,20 @@ void Circuit::print_fault_classes() {
 	}
 	std::cout << "---------------------------------------" << std::endl;
 }
+void Circuit::print_gates() {
+	for (int i = 0; i < inputs.size(); i++) { std::cout << inputs[i] << std::endl; }
+	for (int i = 0; i < output.size(); i++) { std::cout << output[i] << std::endl; }
+
+	std::cout << "The gates are the following: " << std::endl;
+	std::cout << "Gate inputs";
+	std::cout << std::setw(10);
+	std::cout << "Type";
+	std::cout << std::setw(20);
+	std::cout << "Gate output"<<std::endl;
+
+	for (int i = 0; i < gates.size(); i++) {
+		std::cout << gates[i].inputs[0]<<std::setw(5)<<gates[i].inputs[1]<< std::setw(10)
+			<<gates[i].type<< std::setw(20) <<gates[i].output<< std:: endl;
+	}
+	std::cout << std::endl;
+}

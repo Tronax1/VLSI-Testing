@@ -27,6 +27,7 @@ public:
 	void generate_fault_classes();
 	void fault_collapsing();
 	void print_fault_classes();
+	void print_gates();
 };
 #endif 
 

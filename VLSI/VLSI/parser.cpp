@@ -10,7 +10,6 @@ Parser::Parser() {
 	std::vector<std::string> header {"Wire   ", "s-a-0 ", " s-a-1"};
 	inputs.push_back("Primary inputs");
 	output.push_back("Primary output");
-	//fault_universe.push_back(header);
 }
 bool Parser::is_input(std::string input) {
 	if (input.find("input") != std::string::npos) { return true; }
@@ -38,20 +37,3 @@ void Parser::copy_input_output_data(std::vector<std::string> &input, std::vector
 	for (int i = 0; i < output.size(); i++)
 		outputs.push_back(output[i]);
 }
-/*void Parser::print_parsed(std::vector<std::string> result) {
-	for (int i = 0; i < inputs.size(); i++) { std::cout << inputs[i] << std::endl; }
-	for (int i = 0; i < output.size(); i++) { std::cout << output[i] << std::endl; }
-
-	std::cout << "The gates are the following: " << std::endl;
-	std::cout << "Gate inputs";
-	std::cout << std::setw(10);
-	std::cout << "Type";
-	std::cout << std::setw(20);
-	std::cout << "Gate output"<<std::endl;
-
-	for (int i = 0; i < gates.size(); i++) {
-		std::cout << gates[i].inputs[0]<<std::setw(5)<<gates[i].inputs[1]<< std::setw(10) 
-			<<gates[i].type<< std::setw(20) <<gates[i].output<< std:: endl;
-	}
-	std::cout << std::endl;
-}*/

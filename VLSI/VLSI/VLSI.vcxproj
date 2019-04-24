@@ -119,10 +119,15 @@
     <ClCompile Include="parser.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\..\..\..\Downloads\benchmarks\benchmarks\t4_21.ckt" />
     <None Include="..\..\..\..\..\Downloads\benchmarks\benchmarks\t4_3.ckt" />
+    <None Include="..\..\..\..\..\Downloads\benchmarks\benchmarks\t5_10.ckt" />
+    <None Include="..\..\..\..\..\Downloads\benchmarks\benchmarks\t5_26a.ckt" />
+    <None Include="..\..\..\..\..\Downloads\benchmarks\benchmarks\t6_24.ckt" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="circuit.txt" />
+    <Text Include="Other.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Circuit.h" />

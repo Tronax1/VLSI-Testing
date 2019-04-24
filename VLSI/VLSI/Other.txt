@@ -1,0 +1,23 @@
+$ Circuit description for figure 4.21
+$ Author: Soumyaroop Roy
+$ Date: 04/2007
+$
+1gat $... primary input
+2gat $... primary input
+3gat $... primary input
+4gat $... primary input
+5gat $... primary input
+$
+$
+9gat $... primary output
+$
+$
+$ Output Type Inputs...
+$ ------ ---- ---------
+  10gat	and	1gat	2gat
+  6gat	nor	3gat	10gat
+  7gat	and	3gat	4gat
+  8gat	or	5gat	7gat
+  9gat	or	6gat	8gat
+$
+$ end of circuit description

@@ -28,7 +28,7 @@ int main() {
 		switch (option) {
 			case 0: {
 				ifstream myFile;
-				myFile.open("circuit.txt");
+				myFile.open("Other.txt");
 				if (!myFile) { cout << "Could not open file" << endl; }
 				
 				while (getline(myFile, netlist)) { Parse.parser(netlist, parsed); }
