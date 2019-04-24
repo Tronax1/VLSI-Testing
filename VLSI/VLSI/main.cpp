@@ -3,14 +3,18 @@
 #include <string>
 #include <vector>
 #include "parser.h"
+#include "Circuit.h"
 
 using namespace std;
 
 int main() {
 
 	vector<string> parsed;
+	vector<string> inputs;
+	vector<string> outputs;
 	string netlist;
 	Parser Parse;
+	Circuit circuit;
 	bool is_run = true, file_read = false;
 	int option;
 	while (is_run) {
@@ -29,7 +33,8 @@ int main() {
 				
 				while (getline(myFile, netlist)) { Parse.parser(netlist, parsed); }
 				myFile.close();
-				Parse.create_gates(parsed);
+				Parse.copy_input_output_data(inputs, outputs);
+				circuit.create_gates(parsed, inputs, outputs);
 				//Parse.print_parsed(parsed);
 				cout << "---------------------------------------" << endl;
 				cout << "File read successfully" << endl;
@@ -40,15 +45,15 @@ int main() {
 			case 1: {
 				if (!file_read) { cout << "You have not read in the netlist" << endl << endl; }
 				else {
-					Parse.generate_fault_classes();
-					Parse.print_fault_classes();
+					circuit.generate_fault_classes();
+					circuit.print_fault_classes();
 				}
 			}
 				break;
 			case 2: {
 				if (!file_read) { cout << "You have not read in the netlist" << endl << endl; }
 				else {
-					Parse.fault_collapsing();
+					circuit.fault_collapsing();
 					cout << "---------------------------------------" << endl;
 					cout << "Fault collapsing perfomed successfully" << endl<<endl<<"Press 1 to view updated classes\n";
 					cout << "---------------------------------------" << endl << endl;
