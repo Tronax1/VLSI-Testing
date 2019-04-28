@@ -14,10 +14,8 @@ bool Circuit::is_wire_present(std::string wire, std::vector<std::vector<std::str
 }
 void Circuit::create_gates(std::vector<std::string> result, std::vector<std::string> input, std::vector<std::string> outputs) {
 	std::string temp;
-	for (int i = 0; i < input.size(); i++)
-		inputs.push_back(input[i]);
-	for (int i = 0; i < outputs.size(); i++)
-		output.push_back(outputs[i]);
+	for (int i = 0; i < input.size(); i++) { inputs.push_back(input[i]); }
+	for (int i = 0; i < outputs.size(); i++) { output.push_back(outputs[i]); }
 
 	for (int i = 0; i < result.size(); i++) {
 		temp = result[i];
