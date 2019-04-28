@@ -12,6 +12,9 @@ struct GATE {
 	std::string type;
 	std::string single_stuck_at_0 = "X";
 	std::string single_stuck_at_1 = "X";
+	bool has_primary_inputs = false;
+	GATE *next = NULL;
+	GATE *prev = NULL;
 };
 class Circuit {
 private:
