@@ -43,10 +43,19 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="circuit.txt">
+    <Text Include="t4_3.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="Other.txt">
+    <Text Include="t4_21.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="t5_10.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="t6_24.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="t5_26a.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>

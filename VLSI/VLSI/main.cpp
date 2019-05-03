@@ -28,14 +28,13 @@ int main() {
 		switch (option) {
 			case 0: {
 				ifstream myFile;
-				myFile.open("Other.txt");
+				myFile.open("t4_21.txt");
 				if (!myFile) { cout << "Could not open file" << endl; }
 				
 				while (getline(myFile, netlist)) { Parse.parser(netlist, parsed); }
 				myFile.close();
 				Parse.copy_input_output_data(inputs, outputs);
 				circuit.create_gates(parsed, inputs, outputs);
-				//Parse.print_parsed(parsed);
 				cout << "---------------------------------------" << endl;
 				cout << "File read successfully" << endl;
 				cout << "---------------------------------------" << endl<<endl;

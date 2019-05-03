@@ -1,0 +1,31 @@
+$                  The netlist of t5.10.ckt:
+$ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -                        
+$ total number of lines in the netlist .............. 12
+$ simplistically reduced equivalent fault set size = 14
+$             lines from primary input gates ....... 5
+$             lines from primary output gates ....... 1
+$             lines from interior gate outputs ...... 4
+$             lines from ** 1 ** fanout stems ... 2
+$
+$             avg_fanin = 2.00, max_fanin = 2
+$
+agat                                                          $...Primary input 
+bgat                                                          $...Primary input 
+cgat                                                          $...Primary input 
+dgat                                                          $...Primary input 
+egat                                                          $...Primary input 
+
+$
+$
+
+mgat                                                        $...Primary output
+                                                               $...Primary output
+$
+$
+$                   Output           Type             Inputs…
+$                - - - - - - - -     - - - - - - -      - - - - - - - - - 
+fgat	 and	 agat	 bgat
+jgat	 nor	 fgat	 cgat
+igat	 and	 cgat	 dgat
+kgat	 or	 igat	 egat
+mgat	 or	 jgat	 kgat

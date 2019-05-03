@@ -1,0 +1,33 @@
+$ full adder example (5.26a)
+$ ----------------------------
+$(nelist available in page 161 of abramovici text
+$ all internal lines are also named in the book)
+$
+$ 
+$ total lines in netlist : 14
+$
+$
+$ 
+X                   $ ... primary input
+Y                   $ ... primary input
+CI                  $ ... primary input
+
+$
+$
+
+S		    $ ... primary output
+CO		    $ ... primary output
+
+$
+$
+$       output         type        inputs
+$       ------         ----        ------
+        L	nand	X	Y
+        Q	nand	X	L
+        R	nand	L	Y
+        N	nand	Q	R
+        T	nand	CI	N
+        U	nand	CI T
+        V	nand	T	N
+        S	nand	U	V
+        CO	nand	L	T
