@@ -24,9 +24,15 @@ private:
 	std::vector<std::vector<std::string>> fault_universe;
 public:
 	Circuit();
-	bool is_wire_present(std::string wire, std::vector<std::vector<std::string>> fault_universe);
+	bool is_wire_present(std::string wire, 
+						 std::vector<std::vector<std::string>> fault_universe);
+
 	void fine_tune(GATE &gate, std::string gate_information);
-	void create_gates(std::vector<std::string> result, std::vector<std::string> input, std::vector<std::string> outputs);
+
+	void create_gates(std::vector<std::string> result, 
+					  std::vector<std::string> input, 
+				      std::vector<std::string> outputs);
+
 	void generate_fault_classes();
 	void fault_collapsing();
 	void print_fault_classes();

@@ -20,6 +20,7 @@ public:
 	bool is_input(std::string input);
 	bool is_output(std::string input);
 	void parser(std::string input, std::vector<std::string> &result);
-	void copy_input_output_data(std::vector<std::string> &input, std::vector<std::string> &outputs);
+	void copy_input_output_data(std::vector<std::string> &input, 
+								std::vector<std::string> &outputs);
 };
 #endif

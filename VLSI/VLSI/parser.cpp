@@ -31,7 +31,9 @@ void Parser::parser(std::string input, std::vector<std::string> &result) {
 		if (is_output(input)) { output.push_back(parsed_netlist); }
 	}
 }
-void Parser::copy_input_output_data(std::vector<std::string> &input, std::vector<std::string> &outputs) {
+void Parser::copy_input_output_data(std::vector<std::string> &input, 
+								    std::vector<std::string> &outputs) {
+
 	for (int i = 0; i < inputs.size(); i++)
 		input.push_back(inputs[i]);
 	for (int i = 0; i < output.size(); i++)
